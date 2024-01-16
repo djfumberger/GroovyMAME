@@ -97,11 +97,11 @@ public:
 	modeline m_backup_mode = {};
 
 private:
-	char m_device_name[32];
-	char m_device_key[128];
+	//char m_device_name[32];
+	//char m_device_key[128];
 
 	custom_video *m_custom_video = 0;
-	int m_custom_method;
+	//int m_custom_method;
 };
 
 #endif
