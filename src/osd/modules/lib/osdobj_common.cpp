@@ -624,7 +624,10 @@ std::vector<ui::menu_item> osd_common_t::get_slider_list()
 
 void osd_common_t::add_audio_to_recording(const int16_t *buffer, int samples_this_frame)
 {
-	// Do nothing
+    // Copied from src/osd/windows/window.cpp to get mister audio working on macos
+	auto const &window = osd_common_t::window_list().front(); // We only record on the first window
+	if (window)
+		window->renderer().add_audio_to_recording(buffer, samples_this_frame);
 }
 
 
